@@ -1,5 +1,5 @@
-# orbit-vector-interpolation
-A demo project to show timeseries database capabilities to interpolate missing orbital data
+# vector-interpolation
+A demo project to show timeseries database capabilities to estimate missing data using interpolation
 
 ## methodology
 1. Interpolation is done using timescaleDB time bucket gapfill + interpolation method.
@@ -18,7 +18,7 @@ Linux, Docker, Docker Compose
 ### how to build
 Package can be built smoothly using docker compose
 ```
-$ arvin@Omen:~/workspace/orbit-vector-interpolation$ docker compose build
+$ arvin@Omen:~/workspace/vector-interpolation$ docker compose build
 [+] Building 1.3s (17/21)                                                 docker:default
  => [web internal] load build definition from Dockerfile                            0.0s
  => => transferring dockerfile: 316B                                                0.0s
@@ -42,11 +42,11 @@ $ arvin@Omen:~/workspace/orbit-vector-interpolation$ docker compose build
  => [web] exporting to image                                                        0.0s
  => => exporting layers                                                             0.0s
  => => writing image sha256:6410f4946c140277eb9c253615ccbe0bbbe5cc921297f1e6b12f73  0.0s
- => => naming to docker.io/library/orbit-vector-interpolation-web                   0.0s
+ => => naming to docker.io/library/vector-interpolation-web                   0.0s
  => [migrate] exporting to image                                                    0.1s
  => => exporting layers                                                             0.0s
  => => writing image sha256:b674b2fc15c95afad4427fef2a89d089ace9d0a77d0abf944d2a48  0.0s
- => => naming to docker.io/library/orbit-vector-interpolation-migrate               0.0s
+ => => naming to docker.io/library/vector-interpolation-migrate               0.0s
  => [web] resolving provenance for metadata file                                    0.0s
  => [migrate] resolving provenance for metadata file                                0.0s
  ```
@@ -54,12 +54,12 @@ $ arvin@Omen:~/workspace/orbit-vector-interpolation$ docker compose build
 ### how to run
 Run using docker compose
 ```
-arvin@Omen:~/workspace/orbit-vector-interpolation$ docker compose up
+arvin@Omen:~/workspace/vector-interpolation$ docker compose up
 [+] Running 4/2
- ✔ Network orbit-vector-interpolation_default      Created                          0.0s
- ✔ Container orbit-vector-interpolation-tsdb-1     Created                          0.1s
- ✔ Container orbit-vector-interpolation-web-1      Created                          0.0s
- ✔ Container orbit-vector-interpolation-migrate-1  Created                          0.0s
+ ✔ Network vector-interpolation_default      Created                          0.0s
+ ✔ Container vector-interpolation-tsdb-1     Created                          0.1s
+ ✔ Container vector-interpolation-web-1      Created                          0.0s
+ ✔ Container vector-interpolation-migrate-1  Created                          0.0s
 Attaching to migrate-1, tsdb-1, web-1
 tsdb-1     | The files belonging to this database system will be owned by user "postgres".
 tsdb-1     | This user must also own the server process.
